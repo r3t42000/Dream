@@ -1,0 +1,381 @@
+/*------------------------*/
+/*$color
+/*------------------------*/
+$color_primary: #1B214E
+$color_secondary: #3D6789
+$color_third: #708DB7
+$color_black: #2d2a2c
+$color_white: #eee
+$color_yellow: #F2A432
+
+
+.botton
+	padding: 10px 35px
+	border-radius: 20px
+	display: inline-block
+	letter-spacing: 2px
+	font-size: 15px
+	font-weight: 500
+/*------------------------*/
+/*$utility
+/*------------------------*/
+@mixin trans($x,$y:$x)
+	transition: $x,$y
+@mixin abs
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translateX(-50%) translateY(-50%)
+body,html
+	width: 100vw
+	height: 100vh
+/*------------------------*/
+/*$input
+/*------------------------*/
+
+.must //*
+	&:after
+		content: "*"
+		display: inline-block
+		color: red
+		padding-left: 10px
+
+input,select
+	height: 40px
+	border: solid 0.5px #ddd
+	font-size: 15px
+	letter-spacing: 2px
+	border-radius: 5px
+textarea.article
+
+	border-color: #ddd
+	resize: vertical
+	width: 100%
+	min-height: 80px
+	height: 300px
+	// white-space: pre-wrap
+	border-radius: 5px
+	line-height: 22px
+	font-size: 15px
+	letter-spacing: 2px
+
+
+input,select,textarea
+	padding: 10px
+	color: $color_primary
+	background-color: #fefefe
+	&:focus
+		border: solid  2px $color_primary
+		outline: 0
+
+.add
+	background-color: yellow
+//----------------------
+select
+	width: 100px
+	height: 30px
+	margin-right: 15px
+	color: #777
+	font-size: 15px
+.selectText
+	margin-right: 40px
+	display: inline-block
+
+//----------------------
+
+.wrapper
+	// border: solid 1px black
+	background-color: $color_secondary
+	width: 100vw
+	padding-bottom: 100px
+/*------------------------*/
+/*$Header - Navbar
+/*------------------------*/
+*
+	// border: solid 1px
+header
+    background-color: #94C4C4
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    // max-height: 65px
+    z-index: 10
+    // box-shadow: 0px 1px 2px darken($color_secondary,5)
+    .navbar
+
+    .logo
+        font-size: 20px
+        float: left
+        margin: 7px 0px
+        width: 50px
+        // border: solid 1px white
+        img
+            // border: solid 1px black
+            width: 100%
+            color: $color_secondary
+    .navbar-nav
+        float: right
+        width: 500px
+        .nav_menu
+            width: 500px
+            display: inline-block
+            float: left
+        .login
+            float: right
+
+    .menu_item
+        font-size: 16px
+        letter-spacing: 1px
+        display: inline-block
+        padding: 20px 12px
+        &:hover
+            background-color: $color_secondary
+            a
+                color: $color_white
+        a
+            color: $color_primary
+
+    .nav__botton
+        position: absolute
+        top: 30px
+        right: 120px
+        transform: translateY(-50%)
+        background-color: $color_yellow
+        &:hover
+            background-color: $color_primary
+            color: $color_third
+            +trans(0.3s)
+
+
+
+@media (max-width: 768px)
+    header
+        width: 100%
+        z-index: 100
+        .navbar
+            margin-right: -16px
+            margin-left: -16px
+        .logo
+            margin: 10px 0px
+            margin-left: 30px
+            img
+                width: 100%
+                // border: solid 1px black
+        .popup_nav
+            top: 60px
+            position: fixed
+            width: 100%
+            height: 100%
+            background-color: $color_primary
+            opacity: 0
+            visibility: hidden
+
+            .nav_menu
+                margin-top: 40px
+                width: 100%
+            .menu_item, a
+                display: block
+                width: 100%
+                text-align: center
+                transition: 0.3s
+                color: $color_white
+                &:hover
+                    color: $color_third
+                    background-color: $color_primary
+        .popup_nav.open
+            opacity: 1
+            visibility: visible
+
+//menu_toggle
+.menu_toggle
+    position: absolute
+    top: 28px
+    right: 28px
+    transform: translateY(-50%)
+    width: 30px
+    height: 30px
+    // border: solid 1px black
+    cursor: pointer
+    span, span:before, span:after
+        background-color: $color_yellow
+        width: 100%
+        height: 4px
+        display: block
+        border-radius: 2px
+        transition: 0.5s
+    span
+        border: none
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translateX(-50%)
+        &:after, &:before
+            content: ""
+            transform-origin: left
+        &:before
+            transform:  translateY(calc(-50% - 8px)) rotate(0deg)
+        &:after
+            transform:  translateY(calc(-50% + 8px)) rotate(0deg)
+
+    &.open
+        border-radius: 50%
+        span
+            background: red
+            transform: translateX(-50%)
+            background-color: #94C4C4
+        span:before
+            transform: translateY(calc(-50% - 8px)) rotate(42deg)
+        span:after
+            transform: translateY(calc(-50% + 8px)) rotate(-42deg)
+        &:hover
+            span:before, span:after
+                background-color: $color_black
+
+
+
+
+@media (min-width: 769px)
+    .menu_toggle
+        display: none
+/*------------------------*/
+/*$Section
+/*------------------------*/
+.section
+	color: $color_primary
+	padding-top: 100px
+	text-align: center
+	background-color: $color_secondary
+
+.title
+	text-align: center
+	letter-spacing:  7px
+	font-size: 40px
+	font-weight: 500
+	margin-bottom: 50px
+	color: $color_primary
+@media (max-width: 768px)
+	.section
+		padding-top: 90px
+	.title
+		margin-bottom: 30px
+		font-size: 35px
+
+/*------------------------*/
+/* $List
+/*------------------------*/
+.list
+
+	display: block
+	max-width: 800px
+	padding-bottom: 50px
+	margin-left: auto
+	margin-right: auto
+	background-color: $color_white
+	border-radius: 15px
+	overflow: hidden
+	box-shadow: 0px 0px 5px darken($color_secondary,20)
+.list_box
+	padding: 0px 20px
+
+.list_title
+	background-color: $color_primary
+	padding: 20px
+	color: $color_white
+	letter-spacing: 3px
+	font-size: 18px
+	letter-spacing: 4px
+label
+	display: block
+	font-size: 16px
+	font-weight: 500
+	letter-spacing: 1px
+	margin-bottom: 15px
+	line-height: 15px
+	margin-top: 40px
+	color: $color_primary
+	// background-color: #eee
+	// border-bottom: solid 1px
+
+
+.input_title
+	width: 400px
+.classify
+.class
+	display: inline-block
+	padding: 10px
+	margin-right: 20px
+	cursor: pointer
+	border-radius: 5px
+	letter-spacing: 3px
+	border: solid 1px $color_primary
+	&.clicking
+		background-color: $color_secondary
+		color: white
+//情緒選項
+.classify.moodbox
+	// width: 400px
+	.class
+		margin-bottom: 20px
+	input
+		margin-top: 0px
+
+
+
+
+
+
+.chosen_class
+	display: block
+	width: 400px
+	margin-top: 20px
+
+.slect_lists
+	padding-bottom: 40px
+.send
+	text-align: center
+	padding: 10px 30px
+	background-color: $color_yellow
+	display: inline-block
+	margin-top: 50px
+	left: 50%
+	transform: translate(-50%)
+	border-radius: 15px
+	color: $color_primary
+	cursor: pointer
+	transition: 0.5s
+	box-shadow: 0px 0px 1px $color_black
+	&:hover
+		background-color: $color_black
+		color: $color_yellow
+@media (max-width: 768px)
+	.year
+		display: block
+	select
+		width: 80px
+		height: 30px
+		margin-right: 5px
+		color: #777
+		font-size: 15px
+	.selectText
+		margin-right: 20px
+	.year
+		display: block
+		margin-bottom: 10px
+
+
+	.list
+		margin: 30px
+	.classify, .classify.moodbox
+		width: 350px
+	.class
+		padding: 10px
+		margin-bottom: 20px
+	.input_title
+		width: 300px
+	.chosen_class
+		width: 300px
+	.chosen_class
+		margin-top: 10px
+	.send
+		margin-top: 20px

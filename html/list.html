@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css"/>
+  <link rel="stylesheet" href="../css/base.css.css"/>
+  <link rel="stylesheet" href="../css/layout.css"/>
+  <link rel="stylesheet" href="../css/list.css"/>
+</head>
+<body>
+  <div class="wrapper" id="list">
+    <header id="overlay">
+      <div class="container">
+        <div class="navbar u-cf"><a class="logo" href="/dream.html"><img src="../img/dream_logo.svg" alt=""/></a><a class="menu_toggle" id="overlay"><span></span></a>
+          <div class="navbar-nav popup_nav">
+            <ul class="nav_menu">
+              <li class="menu_item"><a href="/html/dreamStory.html">夢境內容</a></li>
+              <li class="menu_item"><a href="/html/knowledge.html">夢境小知識</a></li>
+              <li class="menu_item login"><a>登入</a></li>
+            </ul>
+          </div><a class="botton nav__botton" href="/html/list.html">立即分享</a>
+        </div>
+      </div>
+    </header>
+    <div class="section"></div>
+    <div class="title">夢境故事分享</div>
+    <div class="list">
+      <div class="list_title">夢境資訊</div>
+      <div class="list_box">
+        <label> 日期</label>
+        <div class="selectText year">2017 年</div>
+        <select v-model="thisMonth">
+          <option selected="">請選擇</option>
+          <option v-for="i in 12">{{i}}</option>
+        </select>
+        <div class="selectText">月</div>
+        <div class="selectText"></div>
+        <select v-model="thisDay">
+          <option selected="">請選擇</option>
+          <option v-for="i in 31">{{i}}</option>
+        </select>
+        <div class="selectText">日</div>
+        <label>睡覺時刻</label>
+        <select v-model="sleepHour">
+          <option selected="">請選擇</option>
+          <option v-for="i in 24">{{i}}</option>
+        </select>
+        <div class="selectText">點</div>
+        <select v-model="sleepMinutes">
+          <option selected="">請選擇</option>
+          <option v-for="i in 4">{{(i-1)*15}}</option>
+        </select>
+        <div class="selectText">分</div>
+        <label>起床時刻</label>
+        <select v-model="timeHour">
+          <option selected="">請選擇</option>
+          <option v-for="i in 24">{{i}}</option>
+        </select>
+        <div class="selectText">點</div>
+        <select v-model="timeMinutes">
+          <option selected="">請選擇</option>
+          <option v-for="i in 4">{{(i-1)*15}}</option>
+        </select>
+        <div class="selectText">分</div>
+        <label>夢境風格</label>
+        <div class="classify">
+          <div class="class" v-for="(c,c_id) in classdata" v-on:click="style_click(c_id,classNumber)" v-bind:class="c_id==classNumber?'clicking':''">{{c.name}}</div>
+          <input class="chosen_class" v-if="classNumber==3" placeholder="其他風格" v-model="otherClass"/>
+        </div>
+        <label>情緒</label>
+        <div class="classify moodbox">
+          <div class="class mood" v-for="(p,p_id) in perspective" v-on:click="perspective_click(p_id)" :class="p.class==true?'clicking':''">{{p.name}}</div>
+          <input class="chosen_class" placeholder="還有什麼情緒呢 ?" v-if="perspective[7].class==true" v-model="mood_other"/>
+        </div><br/><br/>
+      </div>
+      <div class="list_title">夢境故事</div>
+      <div class="list_box">
+        <label>標題</label>
+        <input class="input_title" v-model="story_title"/>
+        <label>內文</label>
+        <textarea class="article" v-model="story_text" placeholder="夢境內容"></textarea>
+        <label>是否有以下的特殊狀態</label>
+        <div class="slect_lis">
+          <div class="class" v-for="(l,l_id) in special_Lists" @click="special_click(l_id)" v-bind:class="l.class==true?'clicking':''">{{l.name}}</div>
+          <input class="chosen_class" placeholder="還有什麼特殊狀態呢 ?" v-if="special_Lists[3].class==true" v-model="special_other"/>
+        </div>
+      </div>
+    </div>
+    <h4 class="send">送出</h4>
+  </div>
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <script src="../js/vue.js"></script>
+  <script src="../js/list.js"></script>
+</body>

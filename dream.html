@@ -1,0 +1,62 @@
+<!DOCTYPE html
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>夢台</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/dream.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header id="overlay">
+      <div class="container">
+        <div class="navbar u-cf"><a class="logo" href="/dream.html"><img src="img/dream_logo.svg" alt=""/></a><a class="menu_toggle" id="overlay"><span></span></a>
+          <div class="navbar-nav popup_nav">
+            <ul class="nav_menu">
+              <li class="menu_item"><a href="/html/dreamStory.html">夢境內容</a></li>
+              <li class="menu_item"><a href="/html/knowledge.html">夢境小知識</a></li>
+              <li class="menu_item login"><a>登入</a></li>
+            </ul>
+          </div><a class="botton nav__botton" href="/html/list.html">立即分享</a>
+        </div>
+      </div>
+    </header>
+    <div class="section knows">
+      <div class="container">
+        <div class="row">
+          <div class="img_col col-sm-5"><img class="img" src="img/pic.png" alt=""/></div>
+          <div class="info col-sm-7">
+            <h6>你是不是時常在起床後，對於夢境的內容感到新奇，分享你的夢境故事讓我們一起來搜集夢境的多元樣貌<a href="">瞭解更多</a></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg class="svg_know" height="130" width="100%">
+      <polyline points="0,0 0,130 2048,0"></polyline>
+    </svg>
+    <div class="section" id="storyboxs">
+      <div class="container">
+        <div class="title">熱門分享</div>
+        <div class="row shareBoxs">
+          <div class="box col-sm-6 col-md-4 col-12" v-for="i in 3"><a class="box_inside" href="/html/story.html">
+              <div class="box_title">那天的玩笑真的很機</div>
+              <div class="box_text">
+                <div class="text_boxbox">若干論者接受現代主義是戰後社會的處境：人類以刻苦自強精神來重建文明，建立自工業革命以來最大的社會發展運動，當中又結合美國的清教精神，和冷戰時代的美蘇二元對立政治方式，那麼我們就可了解到為何後現代主義衍生的文化信念會是反對主流方案、反對單一以理性為中心、反對二元論對立，更反對功能主義和實用主義為主的美式文化生活。相反的，對於現代主義以前的舊式社會生活方式，人們卻充滿了懷念之情。建築師對都市文明和鄉間生活的反思，引發我們對現代工業</div>
+              </div>
+              <div class="box_bottom">
+                <div class="icon_box"><i class="fa fa-thumbs-up thumb">
+                    <div class="num thumb_num">20</div></i></div>
+                <div class="icon_box"><i class="fa fa-comment message">
+                    <div class="num message_number">10</div></i></div>
+              </div></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/dream.js"></script>
+</body>

@@ -1,0 +1,342 @@
+/*------------------------*/
+/* $Utility
+/*------------------------*/
+@mixin trans($x,$y:$x)
+  transition: $x,$y
+@mixin abs
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+/*------------------------*/
+/*$color
+/*------------------------*/
+$color_primary: #1B214E
+$color_secondary: #3D6789
+$color_third: #708DB7
+$color_black: #2d2a2c
+$color_white: #E5E4DF
+$color_yellow: #F2A432
+
+
+.botton
+	padding: 10px 35px
+	border-radius: 20px
+	display: inline-block
+	letter-spacing: 2px
+	font-size: 15px
+	font-weight: 500
+
+/*------------------------*/
+/*$Header - Navbar
+/*------------------------*/
+*
+	// border: solid 1px
+header
+	background-color: #94C4C4
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	// max-height: 65px
+	z-index: 10
+	// box-shadow: 0px 1px 2px darken($color_secondary,5)
+	.navbar
+
+	.logo
+		font-size: 20px
+		float: left
+		margin: 10px 0px
+		width: 50px
+		// border: solid 1px white
+		img
+			// border: solid 1px black
+			width: 100%
+			color: $color_secondary
+	.navbar-nav
+		float: right
+		width: 500px
+		.nav_menu
+			width: 500px
+			display: inline-block
+			float: left
+		.login
+			float: right
+
+	.menu_item
+		font-size: 16px
+		letter-spacing: 1px
+		display: inline-block
+		padding: 20px 12px
+		&:hover
+			background-color: $color_primary
+			a
+				color: $color_white
+		a
+			color: $color_primary
+
+	.nav__botton
+		position: absolute
+		top: 30px
+		right: 120px
+		transform: translateY(-50%)
+		background-color: $color_yellow
+		&:hover
+			background-color: $color_primary
+			color: $color_third
+			+trans(0.3s)
+
+
+
+@media (max-width: 768px)
+	header
+		width: 100%
+		z-index: 100
+		.navbar
+			margin-right: -16px
+			margin-left: -16px
+		.logo
+			margin: 10px 0px
+			margin-left: 30px
+			img
+				width: 100%
+				// border: solid 1px black
+		.popup_nav
+			top: 60px
+			position: fixed
+			width: 100%
+			height: 100%
+			background-color: $color_primary
+			opacity: 0
+			visibility: hidden
+
+			.nav_menu
+				margin-top: 40px
+				width: 100%
+			.menu_item, a
+				display: block
+				width: 100%
+				text-align: center
+				transition: 0.3s
+				color: $color_white
+				&:hover
+					color: $color_third
+					background-color: $color_primary
+		.popup_nav.open
+			opacity: 1
+			visibility: visible
+
+//menu_toggle
+.menu_toggle
+	position: absolute
+	top: 28px
+	right: 28px
+	transform: translateY(-50%)
+	width: 30px
+	height: 30px
+	// border: solid 1px black
+	cursor: pointer
+	span, span:before, span:after
+		background-color: $color_yellow
+		width: 100%
+		height: 4px
+		display: block
+		border-radius: 2px
+		transition: 0.5s
+	span
+		border: none
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translateX(-50%)
+		&:after, &:before
+			content: ""
+			transform-origin: left
+		&:before
+			transform:  translateY(calc(-50% - 8px)) rotate(0deg)
+		&:after
+			transform:  translateY(calc(-50% + 8px)) rotate(0deg)
+
+	&.open
+		border-radius: 50%
+		span
+			background: red
+			transform: translateX(-50%)
+			background-color: #94C4C4
+		span:before
+			transform: translateY(calc(-50% - 8px)) rotate(42deg)
+		span:after
+			transform: translateY(calc(-50% + 8px)) rotate(-42deg)
+		&:hover
+			span:before, span:after
+				background-color: $color_black
+
+
+
+
+@media (min-width: 769px)
+	.menu_toggle
+		display: none
+
+/*------------------------*/
+/*$Section
+/*------------------------*/
+.section
+	color: $color_primary
+	padding-top: 70px
+	padding-bottom: 50px
+	text-align: center
+	background-color: $color_secondary
+
+.title
+	text-align: center
+	letter-spacing:  7px
+	font-size: 40px
+	font-weight: 700
+	margin-bottom: 50px
+@media (max-width: 768px)
+	.section
+		padding-top: 40px
+	.title
+		margin-bottom: 30px
+		font-size: 35px
+/*------------------------*/
+/*$Section-Knows
+/*------------------------*/
+.section.knows
+	*
+		// border: solid 1px white
+	background-color: $color_primary
+	color: $color_white
+	min-height: 200px
+	padding-top: 60px
+	padding-bottom: 0px
+	.img
+		margin: 60px auto
+		// border: solid 1px $color_secondary
+		height: 400px
+		width: 400px
+	.info
+		vertical-align: middle
+		padding: 150px 80px
+		text-align: left
+		h6
+			letter-spacing: 4px
+		a
+			color: $color_secondary
+			cursor: pointer
+			letter-spacing: 4px
+// .botton.share
+// 	// margin-top: 20px
+// 	background-color: $color_black
+// 	color: $color_primary
+
+@media (max-width: 768px)
+	.section.knows
+		.img
+			margin-top: 60px
+			margin-bottom: 10px
+
+			height: 200px
+			width: 200px
+		.info
+			padding: 40px 40px
+			text-align: center
+			h6
+				letter-spacing: 2px
+				font-size: 16px
+				a
+					margin-left: 8px
+					display: inline-block
+
+svg.svg_know
+	// border: solid 1px white
+	background-color: $color_secondary
+	margin-top: -10px
+	polyline
+		fill: $color_primary
+		stroke: none
+
+/*------------------------*/
+/* $Section#storyboxs
+/*------------------------*/
+
+.section#storyboxs
+	.box
+		margin-bottom: 30px
+		transition: 0.5s
+		&:hover
+			transform: translate(-1px,-1px)
+			.box_title
+				color: $color_secondary
+			.box_inside
+				box-shadow: 2px 2px 15px darken($color_primary,15)
+
+	.box_inside
+		box-shadow: 2px 2px 5px darken($color_secondary,10)
+		border-radius: 20px
+		cursor: pointer
+		transition: 0.5s
+	.box_title
+		border-radius: 20px 20px 0px 0px
+		padding: 20px
+		color: #333
+		background-color: $color_white
+		margin-bottom: 5px
+		letter-spacing: 6px
+		font-size: 24px
+		font-weight: 700
+		overflow: hidden
+  		text-overflow: ellipsis
+
+	.box_text
+		color: #333
+		height: 300px
+		max-height: 300px
+		padding: 20px
+		background-color: $color_white
+		color: #333
+		margin-bottom: 5px
+		letter-spacing: 4px
+		font-size: 17px
+		line-height: 24px
+
+		.text_boxbox
+			overflow: hidden
+			display: -webkit-box
+			-webkit-box-orient: vertical
+			-webkit-line-clamp: 10 // 限制文字只出現 15 行, 結尾出現省略號
+			// line-height: 24px
+			// height: 72px
+
+	.box_bottom
+		color: #333
+		padding: 5px 100px
+		background-color: $color_white
+		border-radius: 0px 0px 20px 20px
+		font-size: 15px
+
+		display: flex
+		justify-content: center
+		align-item: center
+		.icon_box
+			padding: 0px 20px
+
+		i
+			display: inline-block
+			// margin-right: 30px
+		.num
+			height: 20px
+			margin-left: 20px
+			display: inline-block
+
+@media (max-width: 768px)
+	.box
+		margin-bottom: 30px
+		.box_text
+			height: 200px
+
+
+
+
+

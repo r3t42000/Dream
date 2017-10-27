@@ -1,0 +1,119 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+* {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*------------------------*/
+/*$Color */
+/*------------------------*/
+/*------------------------*/
+/*$Font */
+/*------------------------*/
+/*------------------------*/
+/*$Typography */
+/*------------------------*/
+/* Globel */
+body, html {
+  font-family: 'Noto Sans TC',sans-serif,'Helvetica', 'roboto', 'arial'; }
+
+/* heading */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+h1 {
+  font-size: 80px;
+  font-weight: 800;
+  font-family: 'Helvetica', 'roboto', arial, sans-serif;
+  margin-top: 24px;
+  margin-bottom: 24px; }
+
+h2 {
+  font-size: 48px;
+  font-weight: 600;
+  font-family: 'Helvetica', 'roboto', arial, sans-serif;
+  margin-top: 24px;
+  margin-bottom: 24px; }
+
+h3 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Helvetica', 'roboto', arial, sans-serif;
+  line-height: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px; }
+
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Helvetica', 'roboto', arial, sans-serif;
+  line-height: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px; }
+
+h5 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Helvetica', 'roboto', arial, sans-serif;
+  line-height: 1;
+  margin-top: 24px;
+  margin-bottom: 16px; }
+
+h6 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Helvetica', 'roboto', arial, sans-serif;
+  line-height: 32px;
+  margin-top: 24px;
+  margin-bottom: 16px; }
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Helvetica', 'roboto', arial, sans-serif;
+  line-height: 32px;
+  letter-spacing: 0;
+  margin-bottom: 16px; }
+
+.subtitle {
+  font-size: 48px;
+  font-weight: 900;
+  font-family: 'Raleway','Helvetica', 'roboto', arial, sans-serif;
+  margin-top: 24px;
+  margin-bottom: 24px; }
+
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 40px; } }
+
+/* link */
+a {
+  font-size: 16px;
+  text-decoration: none; }
+  a:hover, a:active, a:fucus {
+    color: #484848;
+    text-decoration: none; }
+
+/* list */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/*------------------------*/
+/* $Icon */
+/*------------------------*/
+i {
+  font-size: 10px; }
+
+/*------------------------*/
+/* $Utility */
+/*------------------------*/
+.u-cf:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden; }
