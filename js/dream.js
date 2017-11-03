@@ -1,3 +1,11 @@
+var vm = new Vue({
+    el: "#storyboxs",
+    data:{
+    text: ""
+  }
+})
+
+
 $(document).ready(function()
 {
     $(".menu_toggle").click(function(){
@@ -15,9 +23,3 @@ $(document).ready(function()
     })
 })
 
-var vm = new Vue({
-    el: "#storyboxs",
-    data:{
-    text: ""
-  }
-})
