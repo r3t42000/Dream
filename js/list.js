@@ -35,7 +35,7 @@ var perspective =
 
 var special_Lists=
 [
-  {name:"夢冷汗或驚醒",class:false},
+  {name:"冒冷汗或驚醒",class:false},
   {name:"清醒夢",class:false},
   {name:"夢遺",class:false},
   {name:"其他",class:false},

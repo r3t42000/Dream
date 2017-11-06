@@ -180,7 +180,7 @@ header {
   text-align: center;
   letter-spacing: 7px;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 50px; }
 
 @media (max-width: 768px) {
@@ -200,9 +200,11 @@ header {
   padding-top: 60px;
   padding-bottom: 0px; }
   .section.knows .img {
-    margin: 60px auto;
-    height: 400px;
-    width: 400px; }
+    margin: 70px auto;
+    margin-top: 100px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%; }
   .section.knows .info {
     vertical-align: middle;
     padding: 150px 80px;
@@ -272,7 +274,7 @@ svg.svg_know {
   margin-bottom: 5px;
   letter-spacing: 6px;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   overflow: hidden;
     overflow-text-overflow: ellipsis; }
 
