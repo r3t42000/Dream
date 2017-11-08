@@ -220,7 +220,7 @@ header {
 
 @media (max-width: 768px) {
   .paginator {
-    top: 8%;
+    top: 100px;
     left: 10px; }
     .paginator .li {
       width: 30px;
@@ -253,3 +253,8 @@ header {
 .lineline {
   border: dashed 1px #3D6789;
   margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 100px 0px;
+    height: 100%; } }
